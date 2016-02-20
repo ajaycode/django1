@@ -12,6 +12,6 @@ def post_list (request):
     return render (request, 'blog/post_list.html', {})
 
 def hello (request):
-    t = get_template('post_list.html')
-    html = t.render({'name': "Joe"})
+    t = get_template('base.html')
+    html = t.render({'name': "Jane"})
     return HttpResponse (html)

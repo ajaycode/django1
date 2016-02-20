@@ -57,7 +57,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['E:/ajay/django1/blog/templates/blog/'],
+        'DIRS': [os.path.realpath(os.path.dirname(__file__))+'/templates', BASE_DIR + '/blog/' + 'templates/blog/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
