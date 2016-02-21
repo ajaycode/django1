@@ -25,14 +25,15 @@ class Index (View):
 
 class PeopleList (View):
     def get(self, request):
-        people = Person.objects.all()
-        pers = people[0]
-        return render ('profile.html', pers)
+        pers = Person.objects.all()
+        #pers = people[0]
+        return render (request,'profile.html', {'persons': pers})
 
 def people_list (request):
     if request.method == "GET":
-
         #persons = {{'first_name': "Yudhishtira", 'last_name': 'Pandava'}, {'first_name': "Nakul", 'last_name': 'Pandava'}}
+        print ("GET Request")
         person = {'first_name': "Yudhishtir", 'last_name': 'Pandava'}
+        print (person)
         return render(request,'profile.html' , {'person': person})
         #return HttpResponse (html)

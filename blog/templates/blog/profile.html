@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-{{person}}
     <div class="row clearfix">
         <div class="col-md-12 column">
-                <span>{{person.first_name}}, {{person.last_name}}</span>
+            {% for person in persons %}
             <div class="well">
-                <span>{{first_name}}, {{last_name}}</span>
+                <span>{{person.first_name}}, {{person.last_name}}</span>
             </div>
-
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
