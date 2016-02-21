@@ -4,7 +4,10 @@
         <div class="col-md-12 column">
             {% for person in persons %}
             <div class="well">
-                <span>{{person.first_name}}, {{person.last_name}}</span>
+                <span>{{person.first_name}}</span>
+            </div>
+            <div class="well">
+                <span> {{person.last_name}}</span>
             </div>
             {% endfor %}
         </div>

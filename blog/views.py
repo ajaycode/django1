@@ -31,9 +31,5 @@ class PeopleList (View):
 
 def people_list (request):
     if request.method == "GET":
-        #persons = {{'first_name': "Yudhishtira", 'last_name': 'Pandava'}, {'first_name': "Nakul", 'last_name': 'Pandava'}}
-        print ("GET Request")
-        person = {'first_name': "Yudhishtir", 'last_name': 'Pandava'}
-        print (person)
-        return render(request,'profile.html' , {'person': person})
-        #return HttpResponse (html)
+        persons = Person.objects.all()
+        return render(request,'profile.html' , {'persons': persons})
