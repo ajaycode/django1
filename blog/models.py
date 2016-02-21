@@ -58,7 +58,7 @@ class Family (models.Model):
     mother     = models.ForeignKey(Person, verbose_name='Mother', related_name='fk_mother', null=True, blank=True)
     spouse     = models.ForeignKey(Person, verbose_name='Spouse', related_name='fk_spouse', null=True, blank=True)
     date_of_marriage = models.DateField (blank=True, null=True)
-    place_of_marriage = models.CharField (blank=True, null=True)
+    place_of_marriage = models.CharField (max_length=100,blank=True, null=True)
     date_of_divorce   = models.DateField (blank=True, null=True)
 
     def __unicode__(self):
@@ -74,6 +74,12 @@ class Education (models.Model):
     education_level = models.CharField (max_length=3, blank=True, null=True, choices=EDUCATION_LEVEL)
     place = models.CharField (max_length=50, blank=True)
     specialization = models.CharField (max_length=100, blank=True, null=True)
-    start_year = models.PositiveIntegerField (max_length=4)
-    end_year = models.PositiveIntegerField (max_length=4)
+    start_year = models.PositiveIntegerField ()
+    end_year = models.PositiveIntegerField ()
     institution = models.CharField (max_length=100, blank=True, null=True)
+
+    def __unicode__(self):
+        return self.specialization
+
+    class Meta:
+        verbose_name = 'Education'

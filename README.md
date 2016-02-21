@@ -11,3 +11,4 @@ Admin Site:
 ####Run HTTP Server####
 
     python manage.py runserver
+    python manage.py runserver 0.0.0.0:80000 #site accessible on LAN
