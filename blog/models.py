@@ -26,11 +26,11 @@ class Person (models.Model):
     #given_name
     date_of_birth        = models.DateField (blank=True, null=True)
     time_of_birth        = models.TimeField (blank=True)
-    place_of_birth       = models.CharField (max_length=100)
-    country_of_birth     = models.CharField (max_length=100)
+    place_of_birth       = models.CharField (max_length=100, blank=True, null=True)
+    country_of_birth     = models.CharField (max_length=100, blank=True, null=True)
     date_of_death        = models.DateField (blank=True, null=True)
-    place_of_death       = models.CharField (max_length=100)
-    country_of_death     = models.CharField (max_length=100)
+    place_of_death       = models.CharField (max_length=100 , blank=True, null=True)
+    country_of_death     = models.CharField (max_length=100, blank=True, null=True)
     email      = models.EmailField (blank=True)
     city       = models.CharField (max_length=50, blank=True)
     country    = models.CharField (max_length=50, blank=True)
@@ -39,9 +39,9 @@ class Person (models.Model):
     spouse     = models.ForeignKey('Person', verbose_name='Spouse', null=True, blank=True)
     password   = models.CharField (max_length=50)
     user_is_confirmed = models.CharField ('User Status', max_length=2, choices=ACCOUNT_STATUS)
-    twitter_handle = models.CharField(max_length=50)
-    linkedin_handle = models.URLField(max_length=100)
-    facebook_profile_url = models.URLField ()
+    twitter_handle = models.CharField(max_length=50,  blank=True, null=True)
+    linkedin_handle = models.URLField(max_length=100, blank=True, null=True)
+    facebook_profile_url = models.URLField (blank=True, null=True)
 
     class Meta:
         verbose_name = 'person'
