@@ -1,12 +1,17 @@
 {% load staticfiles %}
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <!-- http://stackoverflow.com/questions/27746811/bootstrap-font-scaling-too-small-on-mobile -->
+    <!-- Bootstrap -->
     <link href="{% static 'bootstrap-3.3.6-dist/css/bootstrap.min.css' %}"
-          rel="stylesheet" media="screen" />
-    <meta charset="UTF-8">
-    <title></title>
+          rel="stylesheet" media="screen" type="text/css"/>
 </head>
 <body>
+    <body style="font-size:14px">
      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
          <a class = "navbar-brand" href="#">Family</a>
          <p class="navbar-text navbar-right">User Profile Page</p>
@@ -21,6 +26,8 @@
         <p class="navbar-text navbar-right">Footer </p>
      </nav>
 
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="{% static 'bootstrap-3.3.6-dist/js/bootstrap.min.js' %}"></script>
 </body>
 </html>
