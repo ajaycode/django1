@@ -18,8 +18,14 @@ Admin Site:
 * Login, Logout, Register [1](http://stackoverflow.com/questions/20856800/is-there-a-example-in-django-1-6-and-python-3-to-build-a-accounts-app-includer?rq=1), [2](https://github.com/ubernostrum/django-registration), [3](http://stackoverflow.com/questions/6014834/django-login-logout?rq=1), [4](https://docs.djangoproject.com/en/1.9/topics/auth/default/)
 
 ####Queries to run####
-* Get education records person.his_education.objects.all()
-* Get spouse
+* Get education records Person.his_education.objects.all()
+````
+     from blog.models import Person, Education
+     pers = Person.objects.all()[0]
+     pers.his_education.all()
+````
+* Get spouse(s)
 * Get children
 * Get parents
 * Get siblings
+* Get marital status
