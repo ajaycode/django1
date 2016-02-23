@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1> View Person</h1>
+    <div class="post">
+        {% if person.start_year %}
+            <div class="date">
+                {{ person.start_year }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'person_edit' pk=person.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h1>{{ person.first_name }}, {{ person.last_name}}</h1>
+
+    </div>
+{% endblock %}

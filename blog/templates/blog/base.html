@@ -16,6 +16,10 @@
          <a class = "navbar-brand" href="#">Family</a>
          <p class="navbar-text navbar-right">Login Logout</p>
      </nav>
+     <div class="page-header">
+        <a href="{% url 'person_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+         <h1><a href="/">Blog</a></h1>
+     </div>
      <div class="container">
         {% block content %}
            <h1 class="text-info">Hello Django</h1>
