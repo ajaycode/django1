@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django import template
 from django.template.loader import get_template
 from django.views.generic import View
 from blog.models.models import Person
 from blog.forms import PersonForm
+from django.contrib.auth import authenticate, login, logout
 
 
 # Create your views here.
@@ -65,3 +66,22 @@ def person_edit (request, pk):
 def person_detail (request, pk):
     person = get_object_or_404(Person, pk=pk)
     return render(request, 'blog/person_detail.html', {'person':person})
+
+def user_login (request):
+    if request.user.is_anonymous ():
+        if request.method == 'POST':
+            email    = request.POST['email']
+            password = request.POST['password']
+            user = authenticate(username= email, password=password)
+            if user is not None:
+                if user.is_active ():
+                    login (request, user)
+                else:
+                    return HttpResponse ("User is not active.")
+            else:
+                return HttpResponse ("Incorrect email address and/or password.")
+    return HttpResponseRedirect ("/")
+
+def user_logout (request):
+    logout (request)
+    return HttpResponseRedirect("/")
