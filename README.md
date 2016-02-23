@@ -1,8 +1,10 @@
 
 
 Admin Site:
-* Username: admin
-* Password: supervisor
+````
+Username: admin
+Password: supervisor
+````
 
 ####Install Django####
 
