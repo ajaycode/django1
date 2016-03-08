@@ -26,6 +26,13 @@ Password: supervisor
      pers = Person.objects.all()[0]
      pers.his_education.all()
 ````
+
+* Usage of Django Shell
+````
+     from blog.models.models import Person
+     p = Person.objects.all()
+     print (p[0].spouse)
+````
 * Get spouse(s)
 * Get children
 * Get parents

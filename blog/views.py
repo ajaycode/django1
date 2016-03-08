@@ -85,3 +85,12 @@ def user_login (request):
 def user_logout (request):
     logout (request)
     return HttpResponseRedirect("/")
+
+"""
+TODO: Not working
+"""
+def spouse_view (request, pk):
+    person = get_object_or_404(Person, pk=pk)
+    spouse_id = person.spouse.id
+    spouse    = get_object_or_404(Person, pk=spouse_id)
+    return render (request, 'blog/person_detail.html', {'person':spouse})

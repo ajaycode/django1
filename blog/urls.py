@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^person/new/$', views.person_new, name='person_new'),
     url (r'^person/edit/(?P<pk>[0-9]+)/$', views.person_edit, name='person_edit'),
     url (r'^person/(?P<pk>[0-9]+)/$', views.person_detail, name='person_detail'),
+    url (r'^person/(?P<pk>[0-9]+)/spouse/', views.spouse_view, name='spouse_view')
 
 ]
 
@@ -24,5 +25,5 @@ url (r'^person/parents/add/(?P<pk>[0-9]+)/$', views.person_add_parents, name='pe
 url (r'^person/parents/edit/(?P<pk>[0-9]+)/$', views.person_edit_parents, name='person_edit_parents'),
 url (r'^person/parents/remove/(?P<pk>[0-9]+)/$', views.person_remove_parents, name='person_remove_parents'),
 url (r'^person/parents/view/(?P<pk>[0-9]+)/$', views.person_view_parents, name='person_view_parents'),
-url (r'^person/children/details/(?P<pk>[0-9]+)/$', views.person_view_children, name='person_view_children'),
+url (r'^person/(?P<pk>[0-9]+)/children/', views.person_view_children, name='person_view_children'),
 """
